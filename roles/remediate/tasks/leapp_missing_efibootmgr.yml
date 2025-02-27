@@ -6,10 +6,11 @@
         name: efibootmgr
         state: present
       when: ansible_distribution == 'RedHat' and ansible_distribution_major_version|int == 8
+      # While this will complain on current linters as yum is deprecated, running against RHEL 7
+      # does require an older version of Ansible that still has ansible.builtin.yum
     - name: leapp_missing_efibootmgr | Install efibootmgr package
-      ansible.builtin.yum:
+      ansible.builtin.yum: #noqa: fqcn[action-core]
         name: efibootmgr
         state: present
       when: ansible_distribution == 'RedHat' and ansible_distribution_major_version|int == 7
-
 ...

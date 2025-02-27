@@ -30,6 +30,11 @@ The collection may be used for the RHEL upgrade paths and minor versions support
 
 The roles in this collection have been successfully used in a number of different environments including on-prem bare metal servers and VMs pulling RHEL packages from Red Hat CDN repos, Satellite content views, or mirrored repos internal to disconnected networks. Upgrading RHEL on Amazon EC2 instances pulling from bring-your-own-subscription CDN repos or pay-as-you-go RHUI repos have also been tested. Upgrading RHEL on other public clouds should be possible as well after setting the documented role variables as required.
 
+> [!IMPORTANT]
+> Targeting RHEL 6 nodes requires an Ansible-core version <= 2.12
+> Targeting RHEL 7 nodes requires an Ansible-core version <= 2.16
+> See [this knowledgebase article](https://access.redhat.com/articles/6977724) for details
+
 ## Not in scope
 
 Third-party products and packages are not upgraded by the `upgrade` role. To achieve a complete end-to-end server upgrade, you may need to implement custom automation beyond the scope of this collection to perform tasks required for the upgrade or removal/reinstall of any impacted third-party tools and agents, for example [Veritas Cluster](https://www.veritas.com/support/en_US/doc/infoscale_wp_upgradewithRedHat), [SAP HANA](https://access.redhat.com/solutions/5154031), etc. Likewise, the role does not upgrade packages installed from non-RHEL repositories such as [Red Hat Software Collections](https://access.redhat.com/support/policy/updates/rhscl), [EPEL](https://docs.fedoraproject.org/en-US/epel/), [RPM Fusion](https://rpmfusion.org/), etc.
