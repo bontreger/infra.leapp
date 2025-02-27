@@ -32,7 +32,9 @@ The roles in this collection have been successfully used in a number of differen
 
 > [!IMPORTANT]
 > Targeting RHEL 6 nodes requires an Ansible-core version <= 2.12
+>
 > Targeting RHEL 7 nodes requires an Ansible-core version <= 2.16
+>
 > See [this knowledgebase article](https://access.redhat.com/articles/6977724) for details
 
 ## Not in scope
